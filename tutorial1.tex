@@ -69,16 +69,16 @@ Therefore, as \(\mathds{Z}[\sqrt{d}]\) is a ring with unity and no zero divisors
 \subsection*{Find all units and zero-divisors in the ring \(\mathds{Z}_4 \oplus \mathds{Z}_4\).}
 
 \solution
-Since addition and multiplication in \(\mathds{Z}_4 \oplus \mathds{Z}_4\) are performed pointwise, it is sufficient to find units and zero divisors in \(\mathds{Z}_4\) and \(\mathds{Z}_3\) and pair them up.
+Since addition and multiplication in \(\mathds{Z}_4 \oplus \mathds{Z}_4\) are performed pointwise, we need to find units and zero divisors in \(\mathds{Z}_4\) and \(\mathds{Z}_3\) and pair them up, and then consider the zeros of each.
 \\\\
 The units of \(\mathds{Z}_4\) and \(\mathds{Z}_3\) are precisely those elements relatively prime to 4 and 3 respectively.
 
 \hspace* \(\mathds{Z}_4\) units = \{1,3\}\\
 \hspace* \(\mathds{Z}_3\) units = \{1,2\}
 
-So the units of \(\mathds{Z}_4 \oplus \mathds{Z}_4\) are (1,1), (1,2), (3,1) and (3,2).
+Adding the zeros of to the possible combinations, we get the units of \(\mathds{Z}_4 \oplus \mathds{Z}_4\) are (1,1), (1,2), (3,1) ,(3,2), (0,1), (0,2), (1,0) and (3,0).
 
-Similarly, by constructing Cayley tables we can observe that \(\mathds{Z}_4\) has a zero-divisor of 2, and \(\(mathds{Z}_3\) has no zero-divisors. Thus, the only zero-divisor of \(\mathds{Z}_4 \oplus \mathds{Z}_4\) is (2,0).
+Similarly, by constructing Cayley tables we can observe that \(\mathds{Z}_4\) has a zero-divisor of 2, and \(\mathds{Z}_3\) has no zero-divisors. Thus, the only zero-divisor of \(\mathds{Z}_4 \oplus \mathds{Z}_4\) is (2,0).
 
 \pagebreak
 \section*{Question 3}
@@ -230,6 +230,6 @@ And their product will be 0 as shown.
 \end{align*}
 The condition on \(d\) is that \(S_d\) is only defined over the reals, so \(d\geq 0\). If \(d<0\) then every element in \(S_d\) is invertible, and there are no zero-divisors.
 \\\\
-Interestingly, despite me saying not being a unit was only a necessary condition for being a zero-divisor, in this ring it turned out to be sufficient. I have not convinced myself of a reason why this is the case. Is it because this ring is commutative?
+Interestingly, despite me saying not being a unit was only a necessary condition for being a zero-divisor, in this ring it turned out to be sufficient. I have not convinced myself of a reason why this is the case - the ring is commutative, but not finite so the result shown in class doesn't apply. I feel like I'm missing something.
 \end{center}
 \end{document}
