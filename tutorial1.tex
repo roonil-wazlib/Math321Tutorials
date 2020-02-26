@@ -69,7 +69,7 @@ Therefore, as \(\mathds{Z}[\sqrt{d}]\) is a ring with unity and no zero divisors
 \subsection*{Find all units and zero-divisors in the ring \(\mathds{Z}_4 \oplus \mathds{Z}_3\).}
 
 \solution
-Since addition and multiplication in \(\mathds{Z}_4 \oplus \mathds{Z}_3\) are performed pointwise, we need to find units and zero divisors in \(\mathds{Z}_4\) and \(\mathds{Z}_3\) and pair them up.
+Since multiplication in \(\mathds{Z}_4 \oplus \mathds{Z}_3\) is performed pointwise, we need to find units in \(\mathds{Z}_4\) and \(\mathds{Z}_3\) and pair them up.
 \\\\
 The units of \(\mathds{Z}_4\) and \(\mathds{Z}_3\) are precisely those elements relatively prime to 4 and 3 respectively.
 
@@ -78,7 +78,11 @@ The units of \(\mathds{Z}_4\) and \(\mathds{Z}_3\) are precisely those elements 
 
 So by considering all possible pairs, we get the units of \(\mathds{Z}_4 \oplus \mathds{Z}_3\) are (1,1), (1,2), (3,1) and (3,2).
 
-Similarly, by constructing Cayley tables we can observe that \(\mathds{Z}_4\) has a zero-divisor of 2, and \(\mathds{Z}_3\) has no zero-divisors. Thus, the only zero-divisor of \(\mathds{Z}_4 \oplus \mathds{Z}_3\) is (2,0).
+By constructing Cayley tables we can observe that \(\mathds{Z}_4\) has a zero-divisor of 2, and \(\mathds{Z}_3\) has no zero-divisors. Thus, all elements in \(\mathds{Z}_4 \oplus \mathds{Z}_3\) of the form \((2,x)\) are zero-divisors, as we can multiply by some \(2,0)\) to get 0. Additionally, any element of the form \((0,x)\) or \((y,0)\) is a zero divisor, as it can be multiplied by the other to get 0.
+
+So overall, the zero divisors are;
+
+\((2,0), (2,1), (2,2), (1,0), (3,0), (0,1), (0,2)\)
 
 \pagebreak
 \section*{Question 3}
