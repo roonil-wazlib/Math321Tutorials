@@ -1,0 +1,165 @@
+\documentclass{article}
+
+
+\usepackage{minted}
+\usepackage{fancyhdr}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage[margin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{xparse}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+\title{	
+	\normalfont\normalsize
+	\vspace{25pt} % Whitespace
+	\rule{\linewidth}{0.5pt}\\ % Thin top horizontal rule
+	\vspace{20pt} % Whitespace
+	{\huge MATH321 Tutorial 2}\\ % The assignment title
+	\vspace{12pt} % Whitespace
+	\rule{\linewidth}{2pt}\\ % Thick bottom horizontal rule
+	\vspace{12pt} % Whitespace
+}
+
+\author{\LARGE Emma Hogan \\\\53837798} % Your name
+
+
+\date{\normalsize\today} % Today's date (\today) or a custom date
+\begin{document}
+\begin{titlepage}
+\maketitle
+\thispagestyle{empty}
+\end{titlepage}
+\section*{Question 1}
+\subsection*{Show that char(\(\mathds{Z}_m \oplus \mathds{Z}_n)\) is the least common multiple of \(m\) and \(n\).}
+First we show that \(n = char(\mathds{Z}_n)\):
+\\\\
+\(n\) is the lowest positive integer such that \(n*1 = 0\) in \(\mathds{Z}_n\). Also, \(\forall a \in \mathds{Z}_n\), \(n*a = 0\).
+\\\\
+Therefore \(char(\mathds{Z}_n) = n\).
+\\\\
+We want the lowest possible k so that \(\forall a \in \mathds{Z}_m, \b \in \mathds{Z}_n\):
+\begin{align*}
+char(\mathds{Z}_m \oplus \mathds{Z}_n) &= k\\
+k(a,b) = (ka,kb) &= (0,0)\\
+\implies ka &= 0\\
+\implies kb &= 0\\
+\end{align*}
+\(k\) must be a multiple of \(m\) and a multiple of \(n\) so that
+\begin{align*}
+k*1 &= 0 \in \mathds{Z}_m\\
+k*1 &= 0 \in \mathds{Z}_n
+\end{align*}
+So the lowest value k could possible hold is \(lcm(m,n)\).  Let \(k = lcm(m,n)\), with \(k = xn\) and \(k = ym\). We now show this is sufficient.
+\begin{align*}
+(ka, kb) = (x*n*a,y*m*b) = (x*0, y*0) = (0,0)
+\end{align*}
+So \(char(\mathds{Z}_m \oplus \mathds{Z}_n) = lcm(m,n)\).
+\section*{Question 2}
+\subsection*{Determine whether \(3x^2 + 6x - 6\) is irreducible over \(\mathds{Z}\); over \(\mathds{Q}\); over \(\mathds{Z}_5\); over \(\mathds{Z}_{11}\).}
+Let \(f(x) = 3x^2 + 6x - 6\).
+\\\\
+Over \(\mathds{Z}\):
+\\\\
+3 is not a unit in \(\mathds{Z}\) so \(f(x)\) is reducible because a factor of 3 can be taken out.
+\\\\
+Over \(\mathds{Q}\):
+\\\\
+\(\mathds{Q}\) is a field, so since \(f(x)\) has no zeroes in \(\mathds{Q}\), it is irreducible.
+\\\\
+Over \(\mathds{Z}_5\):
+\\\\
+\(\mathds{Z}_5\) is a field, so since \(f(x)\) has no zeroes in \(\mathds{Z}_5\), it is irreducible.
+\\\\
+Over \(\mathds{Z}_{11}\):
+\\\\
+\(f(x)\) has zeroes \(x=4\) and \(x=5\) in \(\mathds{Z}_{11}\), so \(f(x)\) is reducible over \(\mathds{Z}_{11}\).
+\section*{Question 3}
+\subsection*{Consider the map \(\varphi:\mathds{Z}[\sqrt(5)] \rightarrow \(M_2(\mathds{Z})\) given by \(\varphi(m + n\sqrt(5) =
+\begin{bmatrix}
+    m & 5n\\
+    n & m\\
+\end{bmatrix}\).}
+\subsection*{(a) Verify that \(\varphi\) is a ring homomorphism.}
+Checking \(\varphi\) is additive:
+
+\begin{align*}
+\varphi(m_1 + n_1\sqrt{5}) + \varphi(m_2 + n_2\sqrt{5}) &= 
+\begin{bmatrix}
+	m_1 & 5n_1\\
+	n_1 & m_1\\
+\end{bmatrix}
++ \begin{bmatrix}
+	m_2 & 5n_2\\
+	n_2 & m_2\\
+\end{bmatrix}\\
+&= \begin{bmatrix}
+	m_1 + m_2 & 5n_1 + 5n_2\\
+	n_1 + n_2 & m_1 + m_2\\
+\end{bmatrix}\\
+&= \begin{bmatrix}
+	m_1 + m_2 & 5(n_1 + n_2)\\
+	n_1 + n_2 & m_1 + m_2\\
+\end{bmatrix}\\
+&= \varphi(m_1+m_2+(n_1+n_2)\sqrt{5})\\
+&= \varphi((m_1 + n_1\sqrt{5}) + (m_2 + n_2\sqrt{5}))
+\end{align*}
+So \(\varphi\) is additive. Checking \(\varphi\) is multiplicative:
+
+\begin{align*}
+\varphi(m_1 + n_1\sqrt{5})*\varphi(m_2+n_2\sqrt{5}) &=
+\begin{bmatrix}
+	m_1 & 5n_1\\
+	n_1 & m_1\\
+\end{bmatrix}
+* \begin{bmatrix}
+	m_2 & 5n_2\\
+	n_2 & m_2\\
+\end{bmatrix}\\
+&= \begin{bmatrix}
+	m_1m_2 + 5n_1n_2 & 5m_15n_2 + 5m_2n_1\\
+	m_2n_1 + m_1n_2 & 5n_1n_2 + m_1m_2\\
+\end{bmatrix}\\
+&= \begin{bmatrix}
+	m_1m_2 + 5n_1n_2 & 5(m_1n_2 + n_1m_2)\\
+	m_1n_2 + n_1m_2 & m_1m_2 + 5n_1n_2\\
+\end{bmatrix}\\
+&= \varphi((m_1m_2+5n_1n_2) + (m_1n_2 + n_1m_2)\sqrt{5})\\
+&= \varphi((m_1 + n_1\sqrt{5}) * (m_2 + n_2\sqrt{5}))
+\end{align*}
+So \(\varphi\) is multiplicative. Therefore, \(\varphi\) is a homomorphism.
+\subsection*{(b) \(S = \left{
+\begin{bmatrix}
+	a & b\\
+	0 & c\\
+\end{bmatrix} | a,b,c \in \mathds{Z} \right}\) is a subring of \(M_2(\mathds{Z})\). Find \(\varphi^{-1}(S)\).}
+\section*{Question 4}
+\subsection{Let R and S be rings. Show that \(R \oplus S\) and \(S \oplus R\) are isomorphic.}
+Define \(\varphi : R \oplus S \rightarrow S \oplus R\) by
+\begin{align*}
+\varphi((a,b)) = (b,a)
+\end{align*}
+\(\varphi\) is additive because:
+\begin{align*}
+\varphi((a_1, b_1) + (a_2,b_2)) &= \varphi((a_1 + a_2, b_1 + b_2))\\
+&= (b_1 + b_2, a_1 + a_2)\\
+&= (b_1, a_1) + (b_2, a_2)\\
+&= \varphi(a_1, b_2) + varphi(a_2, b_2)\\
+\end{align*}
+\(\varphi\) is multiplicative because:
+\begin{align*}
+\varphi((a_1, b_1)*(a_2, b_2)) &= \varphi((a_1a_2, b_1b_2))\\
+&= (b_1b_2, a_1a_2)\\
+&= (b_1, a_1) * (b_2, a_2)\\
+&= \varphi(a_1, b_1)*\varphi(a_2, b_2)
+\end{align*}
+Therefore, \(\varphi\) is a homomorphism. Clearly it is also both one-to-one and onto, so \(\varphi\) is an isomorphism. Since there exists an isomorphis between \(R \oplus S\) and \(S \oplus R\), they are isomorphic.
+\end{document}
